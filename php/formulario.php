@@ -1,4 +1,10 @@
 
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,9 @@
     <h1>
     FORMULARIO DE ADOPCION
     </h1>
-        <form action="ficha.php" method="post" autocomplete="off">
+
+    <form action="ficha.php" method="post" autocomplete="off">
+       <!-- <form action="ficha.php" method="post" autocomplete="off"> -->
         <!-- <form action="mail.php" method="post" autocomplete="off"> -->
 
 <!-- Nombre Animal -->
@@ -28,7 +36,9 @@
 <?php
 
 // PODEMOS usar $_GET porque cuando nos vamos a una direccion con href, el GET seria como un REQUEST o un POST, en donde el enlace seria como un form, y el GET recibe la informacion de la anterior pagina, es decir, al final el enlace mediante GET recibe la informacion de la pagina anterior.
-echo($_GET['nombre']);
+
+$nombreAnimal = $_GET['nombre'];
+echo($nombreAnimal);
 ?>
  Te esta esperando
 </h2>
@@ -39,7 +49,14 @@ $imagen = $_GET['img'];
 // Como vemos pusimos el $_GET de imagen dentro de una variable, para despues hacer un echo de mostrar una imagen en donde reemplazamos la direccion por la direccion o la variable que contiene la propiedad de la imagen del objeto
 echo('<img src="../' . $imagen . '">');
 
+// o tambien
 ?>
+
+<!-- <img src="</?php $imagen ?>" class="Foto"> -->
+
+
+
+
 </div>
 
         <!-- DNI imagen -->
@@ -160,7 +177,18 @@ echo('<img src="../' . $imagen . '">');
 
         <br>
 
-    
+       
+    <!-- CONDICIONAR A QUE CUANDO LE PRESIONEMOS 'ENVIAR' ESTE NOS CAMBIE POR 'RESERVADO Y CON EL DEBIDO MENSAJE-->
+
+    <?php
+// echo('<pre>');
+// print_r($_REQUEST);
+// echo('</pre>');
+
+
+
+
+    ?>
     </div>
     
     </article>

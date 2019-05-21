@@ -39,6 +39,8 @@ $objetos = [
     echo('<article>');
     echo($valor-> imagen());
     echo($valor-> datosanimal());
+    echo($valor-> boton());
+    
     echo('</article>');
   }
 

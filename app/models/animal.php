@@ -19,6 +19,8 @@ class Animal {
     public $alimentacion;
     public $comentario = 'Nada que destacar';
     public $enfermedad = 'Estado no enfermo';
+    // Si esta adoptado o no
+    public $adoptado = 'No adoptado';
     
 
     // Constructor
@@ -177,12 +179,26 @@ echo('<li>');
         
         echo('</li>');
 
+        echo('</li>');
+
 
         echo('<li>');
 
-        // Aca lo que hicimos fue mediante el enlace, agregarle informacion que queremos de las propiedades, como puedes ver concatenamos en este caso el nombre y la imagen. Esta informacion la podemos mostrar en la pagina del link mediante el $_GET
+        
+        
+        echo('Esta Adoptado?: ' . '<span>' . $this->adoptado . '</span>');
 
-        echo('<li class="botton"> <a href="php/formulario.php?nombre=' . $this->nombre . '&img=' . $this->img . '">ADOPCION</a>');
+        
+        
+        echo('</li>');
+
+
+        echo('<li>');
+
+        // Aca lo que hicimos fue mediante el enlace, agregarle informacion que queremos de las propiedades, como puedes ver concatenamos en este caso el nombre y la imagen. Esta informacion la podemos mostrar en la pagina del link mediante el $_GET, aunque tambien nos sirve $_POST y $_REQUEST.
+        // Como vemos le pusimos 'botton' para que nos pueda dejar entrar al link.
+
+        // echo('<li class="botton"> <a href="php/formulario.php?nombre=' . $this->nombre . '&img=' . $this->img . '&adoptado=' . $this->adoptado . '">ADOPCION</a>');
       
         
         // echo('ADOPTAR: ' . '<a href="php/formulario.php">ADOPCIÓN</a>');
@@ -197,5 +213,42 @@ echo('<li>');
       
 
     }
+
+    public function boton() {
+
+        echo('<li>');
+
+        // Aca lo que hicimos fue mediante el enlace, agregarle informacion que queremos de las propiedades, como puedes ver concatenamos en este caso el nombre y la imagen. Esta informacion la podemos mostrar en la pagina del link mediante el $_GET, aunque tambien nos sirve $_POST y $_REQUEST.
+        // Como vemos le pusimos 'botton' para que nos pueda dejar entrar al link.
+
+        echo('<li class="botton"> <a href="php/formulario.php?nombre=' . $this->nombre . '&img=' . $this->img . '&adoptado=' . $this->adoptado);
+
+        if($this->adoptado == 'adoptado') {
+
+
+            echo('Ya esta adoptado');
+        } else if($this->adoptado == 'No esta adoptado'){
+
+            
+        }
+         echo('">ADOPCION</a>');
+      
+        
+        // echo('ADOPTAR: ' . '<a href="php/formulario.php">ADOPCIÓN</a>');
+        
+        echo('</li>');
+
+
+    echo('</ul>');
+    
+    
+    echo('</div>');
+
+    
+      
+        
+    }
+
+
 }
 ?>

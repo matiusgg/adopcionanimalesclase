@@ -35,8 +35,9 @@ foreach($_REQUEST AS $key => $valor) {
     }else if($valor != ""){
     
     echo('Datos de su cita: ' . $key . ' = ' . $valor  . '<br>');
+} 
 }
-}
+
 ?>
 
 <button type="submit">

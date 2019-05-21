@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/formulario.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>
-    FORMULARIO DE ADOPCION
-    </h1>
+    
 
     <section>
     <article>
     <div class="contenedor">
-        <form action="mail.php" method="post" autocomplete="off">
+    <h1>
+    FORMULARIO DE ADOPCION
+    </h1>
+        <form action="ficha.php" method="post" autocomplete="off">
+        <!-- <form action="mail.php" method="post" autocomplete="off"> -->
 
+<!-- Nombre Animal -->
+
+<div>
+<h2>
+<?php
+
+// PODEMOS usar $_GET porque cuando nos vamos a una direccion con href, el GET seria como un REQUEST o un POST, en donde el enlace seria como un form, y el GET recibe la informacion de la anterior pagina, es decir, al final el enlace mediante GET recibe la informacion de la pagina anterior.
+echo($_GET['nombre']);
+?>
+ Te esta esperando
+</h2>
+
+<?php
+$imagen = $_GET['img'];
+
+// Como vemos pusimos el $_GET de imagen dentro de una variable, para despues hacer un echo de mostrar una imagen en donde reemplazamos la direccion por la direccion o la variable que contiene la propiedad de la imagen del objeto
+echo('<img src="../' . $imagen . '">');
+
+?>
+</div>
+
+        <!-- DNI imagen -->
+
+        <label for="text">
+            Pon una imagen de tu DNI
+        </label>
+
+        <input type="file" name="dni" accept="image/x-png,image/gif,image/jpeg" />
+
+        <br>
+
+        
         <!-- Nombre -->
         <label for="Nombre"> <!-- para hacer los titulos-->
             Nombre
@@ -51,7 +86,7 @@
 <!-- Entorno Familiar -->
 
         <label for="text">
-        Entorno familiar
+        Entorno familiar:
         </label>
         <input name="comentario" id="comentario" rows="3" >
 
@@ -63,17 +98,17 @@
         Trabajas?
         </label>
 
-        <input type="checkbox" name="trabajosi" id=""> Si
-        <input type="checkbox" name="trabajono" id=""> No
+        <input type="checkbox" value="Si" name="trabajosi" id=""> Si
+        <input type="checkbox" value="No" name="trabajono" id=""> No
 
 
         <br>
 
 <!-- Opinion de los animales-->
         <label for="text">
-        Que te gusta mas de tener una mascota
+        Que te gusta mas de tener una mascota:
         </label>
-
+<br>
         <textarea name="" id="" cols="30" rows="5"></textarea>
 
         <br>
@@ -81,27 +116,36 @@
 
 <!-- Historial delictivo -->
         <label for="text">
-        Historial delictivo
+        Historial delictivo:
         </label>
 
-        <input type="checkbox" name="trabajosi" id=""> Si
-        <input type="checkbox" name="trabajono" id=""> No
+        <input type="checkbox" name="delictivosi" id=""> Si
+        <input type="checkbox" name="delictivono" id=""> No
 
 
         <br>
-        
+
+        <!-- Fecha Cita -->
+        <label for="text">
+       Fecha Cita Adopcion. Escoge tu dia para adoptar:
+        </label>
+
+        <input type="date" name="fecha" id=""> 
+       
+        <br>
 
         <!-- Comentario -->
         <label for="text">
-            Comentarios
+            Comentarios:
         </label>
+        <br>
         <textarea name="comentario" id="comentario" rows="10" >
             
         </textarea>
 
 <!-- Enviar -->
         <br>
-      <button type="submit">
+      <button type="submit" name="envio">
           Enviar
       </button>
         
@@ -113,7 +157,10 @@
 <!-- Borrar -->
         <input type="reset" value="
         Borrar"> <!-- este nos permite si es un fomrulario muy largo, nos lo limpia-->
-    </form>
+
+        <br>
+
+    
     </div>
     
     </article>
@@ -122,4 +169,3 @@
 </body>
 </html>
 
-entorno familiar, trabajo si o no( checkbox), direccion adopcion, datos centro adopcion, historial delictivo.

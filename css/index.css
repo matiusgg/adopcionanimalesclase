@@ -1,0 +1,55 @@
+
+*{
+    box-sizing: border-box;
+}
+
+section{
+display: flex;
+    padding:15%;
+    flex-direction: column;
+   
+}
+
+article{
+    
+  display: flex;
+  justify-content: center;
+}
+
+
+img{
+
+    width: 500px;
+    border-radius: 50%;
+   
+    height: 500px;
+
+   
+}
+
+div .imagen{
+
+    
+    background-color: red;
+}
+
+.datosanimal{
+
+    display: flex;
+
+    align-items: center;
+   
+
+}
+
+li{
+
+    font-weight: bold;
+}
+span{
+
+    font-weight: bold;
+    color: gray;
+}
+
+

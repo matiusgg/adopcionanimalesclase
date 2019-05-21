@@ -29,7 +29,20 @@ class Perro extends Animal{
         
  }
 
- $guau = new Perro('017', 'HeeHee', 'img/jerry.jpg', 'cafe', 'eo', '1000años', '1kg', 'rata marron', 'masculino', 'quesitos');
+ // GUAU OBJETO 1
+
+ $guau = new Perro('09', 'alberto', 'img/perro.jpg', 'amarillo', 'grande', '15años', '33kg', 'nose', 'masculino', 'moderada');
+
+ // UGANDA OBJETO 2
+
+ $uganda = new Perro('018', 'do you know the way?', 'img/uganda.jpg', 'rojo', 'pequeño', '15años', '1kg', 'ugandiana', 'masculino', 'come de todo');
+ $uganda-> comentario = 'Hecho con las propias manos de la reina MY QUEEN';
+
+ // PERRO SIBERIANO OBJETO 3
+
+ $perrosiberiano = new Perro('020', 'Tobi', 'img/perrosiberiano.jpg', 'blanco', 'grande', '5años', '9kg', 'Perro Siberiano', 'femenino', 'moderada y saludable alimentacion');
+
+ $perrosiberiano-> comentario = 'Perro siberiano muy jugueton y amigable';
 
 
 //  echo('<pre>');

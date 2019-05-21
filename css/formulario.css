@@ -1,0 +1,35 @@
+html{
+    padding: 5%;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
+form {
+
+    align-items: center;
+    display: felx;
+    flex-direction: column;
+    width: 60%;
+    line-height: 5rem;
+    margin-top: 5rem;
+}
+
+input, label, button {
+font-size: 2rem;
+    padding: 5px;
+}
+
+h2{
+    font-weight: bold;
+    color: gray;
+    font-size: 3rem;
+
+}
+
+div {
+
+    font-weight: bold;
+    color: black;
+    font-size: 3rem;
+}

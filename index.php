@@ -1,6 +1,15 @@
 <?php
 include_once('app/models/Perro.php');
 include_once('app/models/Gato.php');
+
+$objetos = [
+  $guau,
+  $uganda,
+  $perrosiberiano,
+  $miau,
+  $gatopersa,
+  $sorprendido
+]
 ?>
 
 
@@ -16,35 +25,28 @@ include_once('app/models/Gato.php');
 </head>
 <body>
     <h1>
-    ESCOGE TU PERRO
+    ESCOGE TU PERRO O GATO
     </h1>
 
     <section>
-    <article>
+    
   
   
   <?php
-echo($guau-> imagen());
-  
-  echo($guau-> datosanimal());
+
+  // PERROS
+  foreach($objetos AS $key => $valor) {
+    echo('<article>');
+    echo($valor-> imagen());
+    echo($valor-> datosanimal());
+    echo('</article>');
+  }
+
 
 ?>
   
   
-    
-    </article>
 
-    <article>
-    <?php
-echo($miau-> imagen());
-  
-  echo($miau-> datosanimal());
-
-  echo($miau-> entrenado());
-
-?>
-  
-    </article>
     
     </section>
 </body>

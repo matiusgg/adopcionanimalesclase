@@ -20,7 +20,7 @@ class Animal {
     public $comentario = 'Nada que destacar';
     public $enfermedad = 'Estado no enfermo';
     // Si esta adoptado o no
-    public $adoptado = 'No adoptado';
+    public $estado;
     
 
     // Constructor
@@ -186,14 +186,16 @@ echo('<li>');
 
         
         
-        echo('Esta Adoptado?: ' . '<span>' . $this->adoptado . '</span>');
+        echo('Esta Adoptado?: ' . '<span>' . $this->estado . '</span>');
 
         
         
         echo('</li>');
 
+        $this-> boton();
 
-        echo('<li>');
+
+        // echo('<li>');
 
         // Aca lo que hicimos fue mediante el enlace, agregarle informacion que queremos de las propiedades, como puedes ver concatenamos en este caso el nombre y la imagen. Esta informacion la podemos mostrar en la pagina del link mediante el $_GET, aunque tambien nos sirve $_POST y $_REQUEST.
         // Como vemos le pusimos 'botton' para que nos pueda dejar entrar al link.
@@ -203,7 +205,7 @@ echo('<li>');
         
         // echo('ADOPTAR: ' . '<a href="php/formulario.php">ADOPCIÓN</a>');
         
-        echo('</li>');
+    //     echo('</li>');
 
 
     echo('</ul>');
@@ -216,37 +218,42 @@ echo('<li>');
 
     public function boton() {
 
-        echo('<li>');
+   
 
         // Aca lo que hicimos fue mediante el enlace, agregarle informacion que queremos de las propiedades, como puedes ver concatenamos en este caso el nombre y la imagen. Esta informacion la podemos mostrar en la pagina del link mediante el $_GET, aunque tambien nos sirve $_POST y $_REQUEST.
         // Como vemos le pusimos 'botton' para que nos pueda dejar entrar al link.
 
-        echo('<li class="botton"> <a href="php/formulario.php?nombre=' . $this->nombre . '&img=' . $this->img . '&adoptado=' . $this->adoptado);
+        switch($this->estado){
 
-        if($this->adoptado == 'adoptado') {
+            case 'ENFERMO':
 
+            echo('<li class ="boton" style="background-color: black"> <a>ENFERMO</a> </li>');
+            break;
 
-            echo('Ya esta adoptado');
-        } else if($this->adoptado == 'No esta adoptado'){
+            case 'RESERVADO':
 
-            
+            echo('<li class ="boton" style="background-color: green"> <a >RESERVADO</a> </li>');
+            break;
+
+            case 'ADOPTAR':
+
+            echo('<li class ="boton" style="background-color: red"> <a href="php/formulario.php?nombre=' . $this->nombre . '&img=' . $this->img . '&adoptado=' . $this->estado . '">ADOPTAR</a>');
+            break;
         }
-         echo('">ADOPCION</a>');
       
         
         // echo('ADOPTAR: ' . '<a href="php/formulario.php">ADOPCIÓN</a>');
         
-        echo('</li>');
 
 
-    echo('</ul>');
+  
     
-    
-    echo('</div>');
+ 
+    }
 
-    
-      
-        
+    public function estadoactual($nuevoestado){
+
+        $this->estado = $nuevoestado;
     }
 
 

@@ -160,6 +160,10 @@ echo('<img src="../' . $imagen . '">');
             
         </textarea>
 
+<!-- Input HIDDEN -->
+
+<input type="hidden" name="boton" value="">
+
 <!-- Enviar -->
         <br>
       <button type="submit" name="envio">

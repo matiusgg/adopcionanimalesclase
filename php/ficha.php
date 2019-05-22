@@ -1,7 +1,7 @@
 <?php
 // COMO AUN NO USAMOS EMAIL, AQUI LLEGARAN LOS DATOS DEL FORMULARIO
 
-
+$estadoactual = $_GET['boton'];
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +37,10 @@ foreach($_REQUEST AS $key => $valor) {
     echo('Datos de su cita: ' . $key . ' = ' . $valor  . '<br>');
 } 
 }
+
+echo('<a href="../index.php?estadoactual=' . $estadoactual . '">VOLVER ADOPTAR</a>');
+
+
 
 ?>
 

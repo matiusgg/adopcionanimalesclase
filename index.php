@@ -37,9 +37,15 @@ $objetos = [
   // PERROS
   foreach($objetos AS $key => $valor) {
     echo('<article>');
+
+    if(isset($_GET['estadoactual'] == 'RESERVADO'){
+
+      echo($valor->estadoactual('RESERVADO'));
+      break;
+    } 
     echo($valor-> imagen());
     echo($valor-> datosanimal());
-    echo($valor-> boton());
+  
     
     echo('</article>');
   }

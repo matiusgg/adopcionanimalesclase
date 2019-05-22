@@ -38,6 +38,8 @@ foreach($_REQUEST AS $key => $valor) {
 } 
 }
 
+// Aqui lo que hicimos fue crear una variuable en donde almacenamos el $_GET del input 'HIDDEN'. Para que despues aqui en el URL, el 'estadoactual' lo enviemos al index, para recopilarlo con $_GET y poder hacer el bucle de foreach
+
 echo('<a href="../index.php?estadoactual=' . $estadoactual . '">VOLVER ADOPTAR</a>');
 
 

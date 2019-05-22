@@ -160,9 +160,9 @@ echo('<img src="../' . $imagen . '">');
             
         </textarea>
 
-<!-- Input HIDDEN -->
+<!-- Input HIDDEN, lo creamos y en value le ponemos el $_GET que recopila los datos del URL del index -->
 
-<input type="hidden" name="boton" value="">
+<input type="hidden" name="boton" value="<?php $_GET['estado']?>">
 
 <!-- Enviar -->
         <br>

@@ -192,7 +192,7 @@ echo('<li>');
         
         echo('</li>');
 
-        $this-> boton();
+        echo($this-> boton());
 
 
         // echo('<li>');
@@ -220,10 +220,21 @@ echo('<li>');
 
    
 
-        // Aca lo que hicimos fue mediante el enlace, agregarle informacion que queremos de las propiedades, como puedes ver concatenamos en este caso el nombre y la imagen. Esta informacion la podemos mostrar en la pagina del link mediante el $_GET, aunque tambien nos sirve $_POST y $_REQUEST.
-        // Como vemos le pusimos 'botton' para que nos pueda dejar entrar al link.
+        
+
+        // USAMOS UN SWITCH porque lo que queremos en esta funcion del boton es que si algunos animales estan en resarva, enfermos o disponibles, nos salga en el boton cual es su estado. Para aquellos que estan en RESERVA o ENFERMOS, les anulamos el <a href> para que no nos deje entrar a la siguiente pagina, simplemente le quitamos 'href' del <a>. A su vez, cuando creemos los objetos y le demos datos a la propiedad de $objeto->estado, este debe llamarse igual que en el 'case' para que de. Ademas dentro del SWITCH, debe ir aquella propiedad que queremos que en los cases nos haga diversas condiciones.
+
+        //En los 'cases' del SWITCH, deben llamarse igual que en los datos o valores que les demos en $objeto->propiedad(que pusimos dentro del SWITCH) para que se tengan cuenta al momento de hacer los 'cases'.
 
         switch($this->estado){
+
+            case 'ADOPTAR':
+
+            // Aca lo que hicimos fue mediante el enlace, agregarle informacion que queremos de las propiedades, como puedes ver concatenamos en este caso el nombre y la imagen, y el estado( esta propiedad lo que queremos tambien es recopilarla pero para que despues que volvamos al index, ya nos aparezca el boton como 'RESERVADO'). Esta informacion la podemos mostrar en la pagina del link mediante el $_GET, aunque tambien nos sirve $_POST y $_REQUEST.
+        // Como vemos le pusimos 'botton' para que nos pueda dejar entrar al link.
+
+            echo('<li class ="boton" style="background-color: red"> <a href="php/formulario.php?nombre=' . $this->nombre . '&img=' . $this->img . '&estado=' . $this->estado . '">ADOPTAR</a> </li>');
+            break;
 
             case 'ENFERMO':
 
@@ -235,19 +246,12 @@ echo('<li>');
             echo('<li class ="boton" style="background-color: green"> <a >RESERVADO</a> </li>');
             break;
 
-            case 'ADOPTAR':
-
-            echo('<li class ="boton" style="background-color: red"> <a href="php/formulario.php?nombre=' . $this->nombre . '&img=' . $this->img . '&adoptado=' . $this->estado . '">ADOPTAR</a>');
-            break;
+        
         }
       
         
         // echo('ADOPTAR: ' . '<a href="php/formulario.php">ADOPCIÓN</a>');
-        
-
-
-  
-    
+   
  
     }
 
